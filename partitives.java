@@ -3,7 +3,7 @@ import java.util.*;
 class Partitives {
 	public static void main(String[] args) {
 		//Partitives.makeCombos();
-		Partitives.recursiveMakeCombos(3);
+		Partitives.recursiveMakeCombos(3, 0);
 	}
 
 	public static void makeCombos() {
@@ -62,12 +62,19 @@ class Partitives {
 
 	}
 
-	public static void recursiveMakeCombos(int numOfLoops) {
-		for (int i = 0; i < numOfLoops; i++) {
-			System.out.println("outer");	
-			recursiveMakeCombos(numOfLoops);
+	public static void recursiveMakeCombos(int numOfLoops, int m) {
+		if (numOfLoops == 10){
+			return;
 		}
-		System.out.println("inner");
+
+		System.out.println("outside");
+
+		for (int i = 0; i < 10; i++) {
+			System.out.println("inside" + i);
+		}
+		m++;
+
+		recursiveMakeCombos(m, m);
 	}
 }
 
